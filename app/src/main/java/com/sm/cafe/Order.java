@@ -4,9 +4,10 @@
 package com.sm.cafe;
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Order implements Customizable {
+public class Order implements Customizable, Serializable {
     private static int nextOrderNumber = 1;
     private int orderNumber;
     public static final double TAXRATE = .06625;

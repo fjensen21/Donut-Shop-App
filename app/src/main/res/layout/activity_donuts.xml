@@ -6,4 +6,92 @@
     android:layout_height="match_parent"
     tools:context=".DonutsActivity">
 
+    <View
+        android:id="@+id/view2"
+        android:layout_width="wrap_content"
+        android:layout_height="545dp"
+        android:background="@color/color_prim"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/waveUp"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:background="@drawable/ic_wave"
+        app:layout_constraintBottom_toTopOf="@+id/view2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/donutMenuTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Order Donuts"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textColor="@color/cardview_dark_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/donutTypeSpinner"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="220dp"
+        android:background="@color/design_default_color_on_primary"
+        android:entries="@array/donut_options"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/donutQuantitySpinner"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="240dp"
+        android:layout_marginLeft="240dp"
+        android:layout_marginTop="220dp"
+        android:background="@color/design_default_color_on_primary"
+        android:entries="@array/quantities"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/addToDonutsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="5dp"
+        android:onClick="addToDonutsClicked"
+        android:text="@string/addToDonuts"
+        android:textColor="@color/black"
+        app:backgroundTint="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/donutTypeSpinner" />
+
+    <Button
+        android:id="@+id/addDonutToOrderButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:onClick="addToOrderClicked"
+        android:text="@string/addToOrder"
+        android:textColor="@color/black"
+        app:backgroundTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/view2"
+        app:layout_constraintEnd_toEndOf="@+id/donutsRecyclerView"
+        app:layout_constraintTop_toBottomOf="@+id/donutsRecyclerView" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/donutsRecyclerView"
+        android:layout_width="363dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addToDonutsButton" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

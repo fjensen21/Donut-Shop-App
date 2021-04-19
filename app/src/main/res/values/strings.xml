@@ -2,12 +2,16 @@
     <string name="app_name">SMFinal</string>
     <string name="default_number">$0.00</string>
 
-    <string-array name="coffee_sizes">
-        <item>Short</item>
-        <item>Tall</item>
-        <item>Grande</item>
-        <item>Venti</item>
-    </string-array>
+    <string name="select_a_size">Select a size!</string>
+    <string name="addToDonuts">Add to Donuts</string>
+    <string name="addToOrder">Add to Order</string>
+    <string name="addToStoreOrders">Add to Store Orders</string>
+    <string name="viewOnlyOrderDetailTitle">Order Details (View Only)</string>
+    <string name="storeOrdersTitle">Store Orders</string>
+    <string name="removeText">X</string>
+    <string name="empty">Empty! Add stuff.</string>
+    <string name="donuts_added">Donuts Added!</string>
+    <string name="donut_removed">Donut Removed.</string>
     <string-array name="quantities">
         <item>1</item>
         <item>2</item>
@@ -15,5 +19,15 @@
         <item>4</item>
         <item>5</item>
     </string-array>
-    <string name="select_a_size">Select a size!</string>
+    <string-array name="donut_options">
+        <item>Pumpkin</item>
+        <item>Blackberry</item>
+        <item>Banana</item>
+    </string-array>
+    <string-array name="coffee_sizes">
+        <item>Short</item>
+        <item>Tall</item>
+        <item>Grande</item>
+        <item>Venti</item>
+    </string-array>
 </resources>

@@ -5,7 +5,9 @@
  */
 package com.sm.cafe;
 
-public abstract class MenuItem {
+import java.io.Serializable;
+
+public abstract class MenuItem implements Serializable {
     int quantity = 0;
 
     /**

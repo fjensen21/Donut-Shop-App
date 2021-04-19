@@ -3,6 +3,8 @@ package com.sm.cafe;
 import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -13,7 +15,6 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 public class CoffeeActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-    private Order currentOrder;
     private Coffee c;
 
     private Switch creamSwitch;
@@ -141,7 +142,6 @@ public class CoffeeActivity extends AppCompatActivity implements AdapterView.OnI
      * Updates the subtotal
      */
     private void updateSubtotal(){
-        MainActivity.displayMessage(this, R.string.app_name);
         subtotal.setText(String.format("$%,.2f", c.itemPrice()));
     }
 
@@ -151,5 +151,9 @@ public class CoffeeActivity extends AppCompatActivity implements AdapterView.OnI
      */
     public void addOrderClicked(View view){
 
+        Intent resultIntent = new Intent();
+        resultIntent.putExtra("coffee", c);
+        setResult(Activity.RESULT_OK, resultIntent);
+        finish();
     }
 }

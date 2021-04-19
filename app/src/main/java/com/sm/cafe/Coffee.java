@@ -6,9 +6,10 @@
 package com.sm.cafe;
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Coffee extends MenuItem implements Customizable {
+public class Coffee extends MenuItem implements Customizable, Serializable {
     private ArrayList<AddIn> addins = new ArrayList<>();
     private int size;
     final static double ADDINCOST = .20;

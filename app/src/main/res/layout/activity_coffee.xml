@@ -9,6 +9,7 @@
     <Button
         android:id="@+id/addOrderButton"
         android:layout_width="wrap_content"
+        android:onClick="addOrderClicked"
         android:layout_height="wrap_content"
         android:layout_marginTop="59dp"
         android:text="Add to Order"

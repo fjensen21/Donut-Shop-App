@@ -5,17 +5,26 @@
  */
 package com.sm.cafe;
 
-public class Donut extends MenuItem {
-    final static double YEASTDONUTPRICE = 1.39;
-    final static double DONUTHOLEPRICE = .33;
-    final static double CAKEDONUTPRICE = 1.59;
-    final static String[] DONUTTYPES = {"Yeast", "Hole", "Cake"};
-    final static String[] YEASTFLAVORS = {"Glazed", "Boston Creme", "Matcha"};
-    final static String[] HOLEFLAVORS = {"Blueberry", "Strawberry", "Durian"};
-    final static String[] CAKEFLAVORS = {"Pumpkin", "Blackberry", "Banana"};
+import java.io.Serializable;
+
+public class Donut extends MenuItem implements Serializable {
+    final static double DONUT_PRICE = 1.39;
+    final static String[] DONUT_FLAVORS = {"Pumpkin", "Blackberry", "Banana"};
 
     private String type = null;    //"Yeast", "Hole", "Cake"
     private String flavor = null;
+
+    public Donut() {
+        super();
+        setFlavor("Pumpkin");
+        super.setQuantity(1);
+    }
+
+    public Donut(String s){
+        super();
+        flavor = "Glazed";
+        super.setQuantity(2);
+    }
 
     /**
      * Calculates the donuts price
@@ -23,14 +32,7 @@ public class Donut extends MenuItem {
      */
     @Override
     public double itemPrice() {
-        switch(type) {
-            case "Yeast":
-                return YEASTDONUTPRICE * super.getQuantity();
-            case "Hole":
-                return DONUTHOLEPRICE * super.getQuantity();
-            default:
-                return CAKEDONUTPRICE * super.getQuantity();
-        }
+        return DONUT_PRICE;
     }
 
     /**
@@ -82,6 +84,6 @@ public class Donut extends MenuItem {
      */
     @Override
     public String toString() {
-        return flavor + " " + type + " " + "(" + super.getQuantity() + ")";
+        return flavor + " " + "(" + super.getQuantity() + ")";
     }
 }
