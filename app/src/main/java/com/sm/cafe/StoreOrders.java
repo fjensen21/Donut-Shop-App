@@ -4,9 +4,10 @@ package com.sm.cafe;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class StoreOrders implements Customizable{
+public class StoreOrders implements Customizable, Serializable {
 
 
     private ArrayList<Order> ordersList = new ArrayList<>();

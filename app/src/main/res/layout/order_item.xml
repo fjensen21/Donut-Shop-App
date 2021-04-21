@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <Button
+        android:id="@+id/viewOrderButton"
+        android:layout_width="67dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="View"
+        android:textSize="10sp"
+        app:backgroundTint="@android:color/holo_green_light"
+        app:layout_constraintBottom_toBottomOf="@+id/orderItemTextView"
+        app:layout_constraintEnd_toStartOf="@+id/removeOrderButton"
+        app:layout_constraintStart_toEndOf="@+id/orderItemTextView"
+        app:layout_constraintTop_toTopOf="@+id/orderItemTextView" />
+
+    <Button
+        android:id="@+id/removeOrderButton"
+        android:layout_width="39dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:text="@string/removeText"
+        app:layout_constraintBottom_toBottomOf="@+id/viewOrderButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/viewOrderButton"
+        app:layout_constraintTop_toTopOf="@+id/viewOrderButton" />
+
+    <TextView
+        android:id="@+id/orderItemTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

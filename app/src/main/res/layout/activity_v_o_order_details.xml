@@ -12,24 +12,50 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="30dp"
         android:layout_marginRight="30dp"
         android:text="@string/viewOnlyOrderDetailTitle"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/orderName" />
+
+    <TextView
+        android:id="@+id/orderName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="176dp"
+        android:layout_marginLeft="176dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="177dp"
+        android:layout_marginRight="177dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ListView
-        android:layout_width="381dp"
-        android:layout_height="560dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/orderItemsRecyler"
+        android:layout_width="354dp"
+        android:layout_height="522dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/viewOnlyTitleTextView" />
+
+    <TextView
+        android:id="@+id/voItemSubtotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/default_number"
+        app:layout_constraintEnd_toEndOf="@+id/orderItemsRecyler"
+        app:layout_constraintStart_toStartOf="@+id/orderItemsRecyler"
+        app:layout_constraintTop_toBottomOf="@+id/orderItemsRecyler" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

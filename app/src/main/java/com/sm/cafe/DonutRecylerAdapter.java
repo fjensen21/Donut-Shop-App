@@ -38,6 +38,7 @@ public class DonutRecylerAdapter extends RecyclerView.Adapter<DonutRecylerAdapte
             }
         });
     }
+    
 
     @Override
     public int getItemCount() {
@@ -45,7 +46,7 @@ public class DonutRecylerAdapter extends RecyclerView.Adapter<DonutRecylerAdapte
 
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder{
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         private TextView donutItemText;
         private Button donutRemoveButton;
 

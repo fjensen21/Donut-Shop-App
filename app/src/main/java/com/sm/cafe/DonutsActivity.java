@@ -1,6 +1,5 @@
 package com.sm.cafe;
 
-import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,6 +11,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -22,6 +22,9 @@ public class DonutsActivity extends AppCompatActivity implements AdapterView.OnI
     RecyclerView donutsRecyclerView;
     DonutRecylerAdapter donutAdapter;
 
+    TextView donutSubtotal;
+
+
     Spinner donutQuantitySpinner;
     Spinner donutTypeSpinner;
 
@@ -30,11 +33,18 @@ public class DonutsActivity extends AppCompatActivity implements AdapterView.OnI
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donuts);
 
+        donutSubtotal = findViewById(R.id.donutSubtotalText);
 
         donutsRecyclerView = findViewById(R.id.donutsRecyclerView);
         donutsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         donutAdapter = new DonutRecylerAdapter(donutsList);
         donutsRecyclerView.setAdapter(donutAdapter);
+        donutAdapter.registerAdapterDataObserver(new RecyclerView.AdapterDataObserver() {
+            @Override
+            public void onChanged() {
+                refreshSubtotal();
+            }
+        });
 
 
         donutQuantitySpinner = findViewById(R.id.donutQuantitySpinner);
@@ -89,5 +99,16 @@ public class DonutsActivity extends AppCompatActivity implements AdapterView.OnI
             setResult(Activity.RESULT_OK, resultsIntent);
             finish();
         }
+    }
+
+    /**
+     * Refreshes the subtotals for a given
+     */
+    private void refreshSubtotal(){
+        double sub = 0;
+        for(Donut d : donutsList){
+            sub += d.itemPrice();
+        }
+        donutSubtotal.setText(String.format("$%,.2f", sub));
     }
 }

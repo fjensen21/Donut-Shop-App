@@ -30,4 +30,6 @@
         <item>Grande</item>
         <item>Venti</item>
     </string-array>
+    <string name="order_placed">Order Placed!</string>
+    <string name="store_orders_updated">Store Order Updated!</string>
 </resources>

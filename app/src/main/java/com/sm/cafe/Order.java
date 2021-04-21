@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class Order implements Customizable, Serializable {
     private static int nextOrderNumber = 1;
     private int orderNumber;
-    public static final double TAXRATE = .06625;
+    public static final double TAX_RATE = .06625;
     private ArrayList<MenuItem> orderItems = new ArrayList<>();
     /**
      * Instatiates an order class with an order number
@@ -96,7 +96,7 @@ public class Order implements Customizable, Serializable {
             sub += orderItems.get(i).itemPrice();
         }
 
-        t = sub * Order.TAXRATE;
+        t = sub * Order.TAX_RATE;
 
         tot = sub + t;
         return tot;

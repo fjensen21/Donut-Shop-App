@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
 
     public static int LAUNCH_COFFEE_CODE = 1;
     public static int LAUNCH_DONUTS_CODE = 2;
+    public static int LAUNCH_DETAIL_CODE = 3;
+    public static int LAUNCH_STORE_ORDERS_CODE = 4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +59,8 @@ public class MainActivity extends AppCompatActivity {
      */
     public void viewOrderClicked(View view){
         Intent intent = new Intent(this, DetailActivity.class);
-        startActivity(intent);
+        intent.putExtra("order", currentOrder);
+        startActivityForResult(intent, LAUNCH_DETAIL_CODE);
     }
 
     /**
@@ -66,7 +69,8 @@ public class MainActivity extends AppCompatActivity {
      */
     public void storeOrderClicked(View view){
         Intent intent = new Intent(this, StoreOrdersActivity.class);
-        startActivity(intent);
+        intent.putExtra("store", store);
+        startActivityForResult(intent, LAUNCH_STORE_ORDERS_CODE);
     }
 
     /**
@@ -91,11 +95,26 @@ public class MainActivity extends AppCompatActivity {
 
             }
         } else if (requestCode == LAUNCH_DONUTS_CODE) {
-            ArrayList<Donut> donuts = (ArrayList<Donut>) data.getSerializableExtra("donuts");
-            for(Donut d: donuts){
-                currentOrder.add(d);
+            if(resultCode == Activity.RESULT_OK) {
+                ArrayList<Donut> donuts = (ArrayList<Donut>) data.getSerializableExtra("donuts");
+                for (Donut d : donuts) {
+                    currentOrder.add(d);
+                }
+                MainActivity.displayMessage(this, R.string.donuts_added);
             }
-            MainActivity.displayMessage(this, R.string.donuts_added);
+        } else if(requestCode == LAUNCH_DETAIL_CODE){
+            if(resultCode == Activity.RESULT_OK) {
+                Order newOrder = (Order) data.getSerializableExtra("updatedOrder");
+                currentOrder = new Order();
+                store.add(newOrder);
+                MainActivity.displayMessage(this, R.string.order_placed);
+            }
+        } else if(requestCode == LAUNCH_STORE_ORDERS_CODE){
+            if(resultCode == Activity.RESULT_OK){
+                StoreOrders s = (StoreOrders) data.getSerializableExtra("updatedStore");
+                store = s;
+                MainActivity.displayMessage(this, R.string.store_orders_updated);
+            }
         }
     }
 
