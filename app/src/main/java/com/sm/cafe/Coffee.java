@@ -1,7 +1,6 @@
 /**
  * Represents a Coffee. By default this is a Short Coffee with no addins
  * @author finnjensen
- * @author ralphcherbaka
  */
 package com.sm.cafe;
 
