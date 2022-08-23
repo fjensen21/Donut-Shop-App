@@ -1,7 +1,6 @@
 /**
  * Represents any menu item that can be ordered
  * @author finnjensen
- * @author ralphcherbaka
  */
 package com.sm.cafe;
 
