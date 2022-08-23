@@ -1,7 +1,6 @@
 /**
  * Represents a Donut with a type and flavor
  * @author finnjensen
- * @author ralphcherbaka
  */
 package com.sm.cafe;
 
